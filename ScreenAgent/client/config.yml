@@ -1,0 +1,43 @@
+
+llm_api:
+
+  # Select ONE of the following models to use:
+
+  # GPT4V:
+  #   model_name: "gpt-4-vision-preview"
+  #   openai_api_key: "<YOUR-OPENAI-API-KEY>"
+  #   target_url: "https://api.openai.com/v1/chat/completions"
+
+  # LLaVA:
+  #   model_name: "LLaVA-1.5"
+  #   target_url: "http://localhost:40000/worker_generate"
+
+  # CogAgent:
+  #   target_url: "http://localhost:40000/worker_generate"
+
+  ScreenAgent:
+    target_url: "http://localhost:40000/worker_generate"
+
+  # Common settings for all models
+  temperature: 1.0
+  top_p: 0.9
+  max_tokens: 500
+
+automaton:
+  language: "en" # "en" or "zh"
+  operation_system: "linux" # "win" or "linux"
+  prompt_tepmlate_dir: "prompt"
+  auto_transitions: true
+  auto_execute_actions: true
+
+remote_vnc_server:
+  host: "localhost"
+  port: 5900
+  password: "<VNC_PASSWORD>"
+
+  use_remote_clipboard: true
+  remote_clipboard_host: "localhost"
+  remote_clipboard_port: 8001
+  remote_clipboard_secret_token: "<CLIPBOARD_SERVER_SECRET_TOKEN>"
+
+  task_list: "tasks.txt"
